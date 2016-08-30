@@ -12,8 +12,8 @@
 		86E222B61D7092850060DAF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86E222B41D7092850060DAF8 /* Main.storyboard */; };
 		86E222B81D7092850060DAF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86E222B71D7092850060DAF8 /* Assets.xcassets */; };
 		86E222BB1D7092850060DAF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86E222B91D7092850060DAF8 /* LaunchScreen.storyboard */; };
-		86E222C61D7092850060DAF8 /* firstApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E222C51D7092850060DAF8 /* firstApplicationTests.swift */; };
-		86E222D11D7092850060DAF8 /* firstApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E222D01D7092850060DAF8 /* firstApplicationUITests.swift */; };
+		86E222C61D7092850060DAF8 /* Lab1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E222C51D7092850060DAF8 /* Lab1Tests.swift */; };
+		86E222D11D7092850060DAF8 /* Lab1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E222D01D7092850060DAF8 /* Lab1UITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,18 +34,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		86E222AD1D7092850060DAF8 /* firstApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firstApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86E222AD1D7092850060DAF8 /* Lab1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E222B01D7092850060DAF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86E222B21D7092850060DAF8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		86E222B51D7092850060DAF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		86E222B71D7092850060DAF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86E222BA1D7092850060DAF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86E222BC1D7092850060DAF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		86E222C11D7092850060DAF8 /* firstApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = firstApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		86E222C51D7092850060DAF8 /* firstApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstApplicationTests.swift; sourceTree = "<group>"; };
+		86E222C11D7092850060DAF8 /* Lab1.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lab1.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		86E222C51D7092850060DAF8 /* Lab1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab1Tests.swift; sourceTree = "<group>"; };
 		86E222C71D7092850060DAF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		86E222CC1D7092850060DAF8 /* firstApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = firstApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		86E222D01D7092850060DAF8 /* firstApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstApplicationUITests.swift; sourceTree = "<group>"; };
+		86E222CC1D7092850060DAF8 /* Lab1.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lab1.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		86E222D01D7092850060DAF8 /* Lab1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab1UITests.swift; sourceTree = "<group>"; };
 		86E222D21D7092850060DAF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,9 +77,9 @@
 		86E222A41D7092850060DAF8 = {
 			isa = PBXGroup;
 			children = (
-				86E222AF1D7092850060DAF8 /* firstApplication */,
-				86E222C41D7092850060DAF8 /* firstApplicationTests */,
-				86E222CF1D7092850060DAF8 /* firstApplicationUITests */,
+				86E222AF1D7092850060DAF8 /* Lab1 */,
+				86E222C41D7092850060DAF8 /* Lab1Tests */,
+				86E222CF1D7092850060DAF8 /* Lab1UITests */,
 				86E222AE1D7092850060DAF8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,14 +87,14 @@
 		86E222AE1D7092850060DAF8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				86E222AD1D7092850060DAF8 /* firstApplication.app */,
-				86E222C11D7092850060DAF8 /* firstApplicationTests.xctest */,
-				86E222CC1D7092850060DAF8 /* firstApplicationUITests.xctest */,
+				86E222AD1D7092850060DAF8 /* Lab1.app */,
+				86E222C11D7092850060DAF8 /* Lab1.xctest */,
+				86E222CC1D7092850060DAF8 /* Lab1.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		86E222AF1D7092850060DAF8 /* firstApplication */ = {
+		86E222AF1D7092850060DAF8 /* Lab1 */ = {
 			isa = PBXGroup;
 			children = (
 				86E222B01D7092850060DAF8 /* AppDelegate.swift */,
@@ -104,33 +104,36 @@
 				86E222B91D7092850060DAF8 /* LaunchScreen.storyboard */,
 				86E222BC1D7092850060DAF8 /* Info.plist */,
 			);
+			name = Lab1;
 			path = firstApplication;
 			sourceTree = "<group>";
 		};
-		86E222C41D7092850060DAF8 /* firstApplicationTests */ = {
+		86E222C41D7092850060DAF8 /* Lab1Tests */ = {
 			isa = PBXGroup;
 			children = (
-				86E222C51D7092850060DAF8 /* firstApplicationTests.swift */,
+				86E222C51D7092850060DAF8 /* Lab1Tests.swift */,
 				86E222C71D7092850060DAF8 /* Info.plist */,
 			);
+			name = Lab1Tests;
 			path = firstApplicationTests;
 			sourceTree = "<group>";
 		};
-		86E222CF1D7092850060DAF8 /* firstApplicationUITests */ = {
+		86E222CF1D7092850060DAF8 /* Lab1UITests */ = {
 			isa = PBXGroup;
 			children = (
-				86E222D01D7092850060DAF8 /* firstApplicationUITests.swift */,
+				86E222D01D7092850060DAF8 /* Lab1UITests.swift */,
 				86E222D21D7092850060DAF8 /* Info.plist */,
 			);
+			name = Lab1UITests;
 			path = firstApplicationUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		86E222AC1D7092850060DAF8 /* firstApplication */ = {
+		86E222AC1D7092850060DAF8 /* Lab1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 86E222D51D7092850060DAF8 /* Build configuration list for PBXNativeTarget "firstApplication" */;
+			buildConfigurationList = 86E222D51D7092850060DAF8 /* Build configuration list for PBXNativeTarget "Lab1" */;
 			buildPhases = (
 				86E222A91D7092850060DAF8 /* Sources */,
 				86E222AA1D7092850060DAF8 /* Frameworks */,
@@ -140,14 +143,14 @@
 			);
 			dependencies = (
 			);
-			name = firstApplication;
+			name = Lab1;
 			productName = firstApplication;
-			productReference = 86E222AD1D7092850060DAF8 /* firstApplication.app */;
+			productReference = 86E222AD1D7092850060DAF8 /* Lab1.app */;
 			productType = "com.apple.product-type.application";
 		};
-		86E222C01D7092850060DAF8 /* firstApplicationTests */ = {
+		86E222C01D7092850060DAF8 /* Lab1Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 86E222D81D7092850060DAF8 /* Build configuration list for PBXNativeTarget "firstApplicationTests" */;
+			buildConfigurationList = 86E222D81D7092850060DAF8 /* Build configuration list for PBXNativeTarget "Lab1Tests" */;
 			buildPhases = (
 				86E222BD1D7092850060DAF8 /* Sources */,
 				86E222BE1D7092850060DAF8 /* Frameworks */,
@@ -158,14 +161,14 @@
 			dependencies = (
 				86E222C31D7092850060DAF8 /* PBXTargetDependency */,
 			);
-			name = firstApplicationTests;
+			name = Lab1Tests;
 			productName = firstApplicationTests;
-			productReference = 86E222C11D7092850060DAF8 /* firstApplicationTests.xctest */;
+			productReference = 86E222C11D7092850060DAF8 /* Lab1.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		86E222CB1D7092850060DAF8 /* firstApplicationUITests */ = {
+		86E222CB1D7092850060DAF8 /* Lab1UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 86E222DB1D7092850060DAF8 /* Build configuration list for PBXNativeTarget "firstApplicationUITests" */;
+			buildConfigurationList = 86E222DB1D7092850060DAF8 /* Build configuration list for PBXNativeTarget "Lab1UITests" */;
 			buildPhases = (
 				86E222C81D7092850060DAF8 /* Sources */,
 				86E222C91D7092850060DAF8 /* Frameworks */,
@@ -176,9 +179,9 @@
 			dependencies = (
 				86E222CE1D7092850060DAF8 /* PBXTargetDependency */,
 			);
-			name = firstApplicationUITests;
+			name = Lab1UITests;
 			productName = firstApplicationUITests;
-			productReference = 86E222CC1D7092850060DAF8 /* firstApplicationUITests.xctest */;
+			productReference = 86E222CC1D7092850060DAF8 /* Lab1.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -204,7 +207,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 86E222A81D7092850060DAF8 /* Build configuration list for PBXProject "firstApplication" */;
+			buildConfigurationList = 86E222A81D7092850060DAF8 /* Build configuration list for PBXProject "Lab1" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -217,9 +220,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				86E222AC1D7092850060DAF8 /* firstApplication */,
-				86E222C01D7092850060DAF8 /* firstApplicationTests */,
-				86E222CB1D7092850060DAF8 /* firstApplicationUITests */,
+				86E222AC1D7092850060DAF8 /* Lab1 */,
+				86E222C01D7092850060DAF8 /* Lab1Tests */,
+				86E222CB1D7092850060DAF8 /* Lab1UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -265,7 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86E222C61D7092850060DAF8 /* firstApplicationTests.swift in Sources */,
+				86E222C61D7092850060DAF8 /* Lab1Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86E222D11D7092850060DAF8 /* firstApplicationUITests.swift in Sources */,
+				86E222D11D7092850060DAF8 /* Lab1UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,12 +285,12 @@
 /* Begin PBXTargetDependency section */
 		86E222C31D7092850060DAF8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 86E222AC1D7092850060DAF8 /* firstApplication */;
+			target = 86E222AC1D7092850060DAF8 /* Lab1 */;
 			targetProxy = 86E222C21D7092850060DAF8 /* PBXContainerItemProxy */;
 		};
 		86E222CE1D7092850060DAF8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 86E222AC1D7092850060DAF8 /* firstApplication */;
+			target = 86E222AC1D7092850060DAF8 /* Lab1 */;
 			targetProxy = 86E222CD1D7092850060DAF8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -404,7 +407,7 @@
 				INFOPLIST_FILE = firstApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RR.firstApplication;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Lab1;
 			};
 			name = Debug;
 		};
@@ -415,7 +418,7 @@
 				INFOPLIST_FILE = firstApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RR.firstApplication;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Lab1;
 			};
 			name = Release;
 		};
@@ -426,8 +429,8 @@
 				INFOPLIST_FILE = firstApplicationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RR.firstApplicationTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/firstApplication.app/firstApplication";
+				PRODUCT_NAME = Lab1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lab1.app/Lab1";
 			};
 			name = Debug;
 		};
@@ -438,8 +441,8 @@
 				INFOPLIST_FILE = firstApplicationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RR.firstApplicationTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/firstApplication.app/firstApplication";
+				PRODUCT_NAME = Lab1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lab1.app/Lab1";
 			};
 			name = Release;
 		};
@@ -449,7 +452,7 @@
 				INFOPLIST_FILE = firstApplicationUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RR.firstApplicationUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Lab1;
 				TEST_TARGET_NAME = firstApplication;
 			};
 			name = Debug;
@@ -460,7 +463,7 @@
 				INFOPLIST_FILE = firstApplicationUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RR.firstApplicationUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Lab1;
 				TEST_TARGET_NAME = firstApplication;
 			};
 			name = Release;
@@ -468,7 +471,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		86E222A81D7092850060DAF8 /* Build configuration list for PBXProject "firstApplication" */ = {
+		86E222A81D7092850060DAF8 /* Build configuration list for PBXProject "Lab1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86E222D31D7092850060DAF8 /* Debug */,
@@ -477,7 +480,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		86E222D51D7092850060DAF8 /* Build configuration list for PBXNativeTarget "firstApplication" */ = {
+		86E222D51D7092850060DAF8 /* Build configuration list for PBXNativeTarget "Lab1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86E222D61D7092850060DAF8 /* Debug */,
@@ -486,7 +489,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		86E222D81D7092850060DAF8 /* Build configuration list for PBXNativeTarget "firstApplicationTests" */ = {
+		86E222D81D7092850060DAF8 /* Build configuration list for PBXNativeTarget "Lab1Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86E222D91D7092850060DAF8 /* Debug */,
@@ -495,7 +498,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		86E222DB1D7092850060DAF8 /* Build configuration list for PBXNativeTarget "firstApplicationUITests" */ = {
+		86E222DB1D7092850060DAF8 /* Build configuration list for PBXNativeTarget "Lab1UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86E222DC1D7092850060DAF8 /* Debug */,
