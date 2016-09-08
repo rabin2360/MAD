@@ -19,9 +19,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PlL-yM-kJq">
                                 <rect key="frame" x="144" y="140" width="63" height="30"/>
-                                <color key="backgroundColor" red="0.35266890080000002" green="0.67240674079999996" blue="0.65894436229999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Paintings"/>
+                                <state key="normal" title="Paintings" backgroundImage="buttonBackground63x30"/>
                                 <connections>
                                     <action selector="paintingsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z12-ub-qxQ"/>
                                 </connections>
@@ -41,9 +41,9 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIj-IR-xMC">
                                 <rect key="frame" x="390" y="140" width="57" height="30"/>
-                                <color key="backgroundColor" red="0.35266890083170643" green="0.67240674083769636" blue="0.65894436229194253" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Drawing"/>
+                                <state key="normal" title="Drawing" backgroundImage="buttonBackground63x30"/>
                                 <connections>
                                     <action selector="drawingPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KK0-er-NFo"/>
                                 </connections>
@@ -72,6 +72,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="buttonBackground63x30" width="63" height="30"/>
         <image name="daVinci" width="294" height="400"/>
     </resources>
 </document>
