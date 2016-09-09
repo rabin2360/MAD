@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lab2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BB_Family" translatesAutoresizingMaskIntoConstraints="NO" id="OTu-Aw-afc">
+                                <rect key="frame" x="175" y="43" width="250" height="268"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="268" id="Q7b-Dn-BLN"/>
+                                    <constraint firstAttribute="width" constant="250" id="dCH-w2-EXA"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bob's Burger Family" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmU-lr-UYX">
+                                <rect key="frame" x="175" y="358" width="250" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="n9s-CF-usl">
+                                <rect key="frame" x="376" y="480" width="57" height="31"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.55000000000000004" height="0.55000000000000004"/>
+                                <connections>
+                                    <action selector="capitalize:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZaU-VA-2js"/>
+                                </connections>
+                            </switch>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="YB9-pA-HIf">
+                                <rect key="frame" x="247" y="414" width="110" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="OOr-Gb-fZF"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Family" width="55"/>
+                                    <segment title="Kids"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changePicture:" destination="BYZ-38-t0r" eventType="valueChanged" id="p3k-Oz-QLs"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capitalization" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqr-EF-Rtg">
+                                <rect key="frame" x="224" y="480" width="124" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="124" id="eDZ-1h-PSM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12" minValue="12" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="KmM-wi-xJR">
+                                <rect key="frame" x="173" y="534" width="254" height="31"/>
+                                <connections>
+                                    <action selector="updateFontSize:" destination="BYZ-38-t0r" eventType="valueChanged" id="VvO-iQ-YuU"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="n9s-CF-usl" secondAttribute="bottom" constant="89" id="2PT-Dr-4FF"/>
+                            <constraint firstItem="RmU-lr-UYX" firstAttribute="trailing" secondItem="n9s-CF-usl" secondAttribute="trailing" id="2oE-YN-Grl"/>
+                            <constraint firstItem="YB9-pA-HIf" firstAttribute="top" secondItem="RmU-lr-UYX" secondAttribute="bottom" constant="35" id="3nA-zh-ebn"/>
+                            <constraint firstItem="KmM-wi-xJR" firstAttribute="leading" secondItem="RmU-lr-UYX" secondAttribute="leading" id="6ub-ie-Pjh"/>
+                            <constraint firstItem="oqr-EF-Rtg" firstAttribute="top" secondItem="YB9-pA-HIf" secondAttribute="bottom" constant="38" id="EJI-QD-gJZ"/>
+                            <constraint firstAttribute="bottom" secondItem="YB9-pA-HIf" secondAttribute="bottom" constant="158" id="Ek6-QS-XL0"/>
+                            <constraint firstItem="KmM-wi-xJR" firstAttribute="top" secondItem="oqr-EF-Rtg" secondAttribute="bottom" constant="23" id="EyG-Nh-X2L"/>
+                            <constraint firstItem="OTu-Aw-afc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="200" id="IUz-Jy-HG0"/>
+                            <constraint firstItem="KmM-wi-xJR" firstAttribute="trailing" secondItem="n9s-CF-usl" secondAttribute="trailing" id="NpK-JC-7Pt"/>
+                            <constraint firstItem="RmU-lr-UYX" firstAttribute="top" secondItem="OTu-Aw-afc" secondAttribute="bottom" constant="47" id="Oua-p1-hyn"/>
+                            <constraint firstItem="n9s-CF-usl" firstAttribute="trailing" secondItem="OTu-Aw-afc" secondAttribute="trailing" id="ZD8-UT-iZf"/>
+                            <constraint firstItem="oqr-EF-Rtg" firstAttribute="bottom" secondItem="n9s-CF-usl" secondAttribute="bottom" id="dJ6-NY-8kH"/>
+                            <constraint firstItem="RmU-lr-UYX" firstAttribute="leading" secondItem="OTu-Aw-afc" secondAttribute="leading" id="e3B-wf-ikP"/>
+                            <constraint firstItem="oqr-EF-Rtg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-14" id="f75-HA-Tlz"/>
+                            <constraint firstItem="n9s-CF-usl" firstAttribute="leading" secondItem="oqr-EF-Rtg" secondAttribute="trailing" constant="28" id="o7Q-fW-Lq2"/>
+                            <constraint firstItem="OTu-Aw-afc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qo4-jl-NdF"/>
+                            <constraint firstItem="YB9-pA-HIf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="247" id="rXc-do-hGf"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="IUz-Jy-HG0"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="capitalizeController" destination="n9s-CF-usl" id="9jA-e1-D0T"/>
+                        <outlet property="imageController" destination="YB9-pA-HIf" id="14k-cZ-HyA"/>
+                        <outlet property="pictureDisplay" destination="OTu-Aw-afc" id="KYx-os-xwf"/>
+                        <outlet property="pictureLabel" destination="RmU-lr-UYX" id="MFU-Wt-tL4"/>
+                        <outlet property="sliderController" destination="KmM-wi-xJR" id="Rl9-ce-siB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="556" y="444"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BB_Family" width="250" height="338"/>
+    </resources>
+</document>
