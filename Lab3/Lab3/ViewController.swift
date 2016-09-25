@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -25,6 +26,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     //loading the ethnicity values
     var ethnicities = ["None","Caucasian", "African American"]
 
+    
+    
     @IBAction func clearFields(sender: UIButton) {
     
         studentID.text = ""
@@ -39,6 +42,147 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         //resetting the buttons as well
         studentIEPSwitch.setOn(false, animated: true)
         student401Switch.setOn(false, animated: true)
+    }
+    
+    @IBAction func cancelApplication(sender: AnyObject) {
+    
+        //create UIAlertController object
+        let alert = UIAlertController(title: "Warning", message: "Are you sure you want to exit? Unsaved info will be lost!", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+        
+        alert.addAction(cancelAction)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:
+            {
+                action in
+                //exit the application if okay pressed
+                UIControl().sendAction(#selector(NSURLSessionTask.suspend), to: UIApplication.sharedApplication(), forEvent: nil)
+
+        })
+        
+        alert.addAction(okAction)
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func validateFields() -> Bool
+    {
+        var validStatus = true
+
+        if studentID.text == ""
+        {
+            studentID.layer.borderWidth = 1
+            studentID.layer.borderColor = UIColor.redColor().CGColor
+            validStatus = false
+        }
+        else
+        {
+            studentID.layer.borderWidth = 0
+            studentID.layer.borderColor = UIColor.whiteColor().CGColor
+            
+        }
+        
+        if studentFirstname.text == ""
+        {
+            studentFirstname.layer.borderWidth = 1
+            studentFirstname.layer.borderColor = UIColor.redColor().CGColor
+            validStatus = false
+        }
+        else
+        {
+            studentFirstname.layer.borderWidth = 0
+            studentFirstname.layer.borderColor = UIColor.whiteColor().CGColor
+            
+        }
+        
+        
+        if studentLastname.text == ""
+        {
+            studentLastname.layer.borderWidth = 1
+            studentLastname.layer.borderColor = UIColor.redColor().CGColor
+            validStatus = false
+        }
+        else
+        {
+            studentLastname.layer.borderWidth = 0
+            studentLastname.layer.borderColor = UIColor.whiteColor().CGColor
+            
+        }
+        
+        
+        if studentDOB.text == ""
+        {
+            studentDOB.layer.borderWidth = 1
+            studentDOB.layer.borderColor = UIColor.redColor().CGColor
+            validStatus = false
+        }
+        else
+        {
+            studentDOB.layer.borderWidth = 0
+            studentDOB.layer.borderColor = UIColor.whiteColor().CGColor
+        }
+        
+        
+        if studentConsentDate.text == ""
+        {
+            studentConsentDate.layer.borderWidth = 1
+            studentConsentDate.layer.borderColor = UIColor.redColor().CGColor
+            validStatus = false
+        }
+        else
+        {
+            studentConsentDate.layer.borderWidth = 0
+            studentConsentDate.layer.borderColor = UIColor.whiteColor().CGColor
+            
+        }
+        
+        
+        if(studentIEPSwitch.on)
+        {
+            if studentIEP.text == ""
+            {
+                studentIEP.layer.borderWidth = 1
+                studentIEP.layer.borderColor = UIColor.redColor().CGColor
+                validStatus = false
+                
+            }
+            else
+            {
+                studentIEP.layer.borderWidth = 0
+                studentIEP.layer.borderColor = UIColor.whiteColor().CGColor
+            }
+        }
+        
+        if(student401Switch.on)
+        {
+            if student401Report.text == ""
+            {
+                student401Report.layer.borderWidth = 1
+                student401Report.layer.borderColor = UIColor.redColor().CGColor
+                validStatus = false
+                
+            }
+            else
+            {
+                student401Report.layer.borderWidth = 0
+                student401Report.layer.borderColor = UIColor.whiteColor().CGColor
+            }
+        }
+        
+        return validStatus
+    
+    }
+    
+    @IBAction func okPressed(sender: UIButton) {
+        
+        if validateFields()
+        {
+            print("Valid Form!")
+        }
+        else
+        {
+            print("Invalid form!")
+        }
     }
     
     func datePickerValueChanged(sender: UIDatePicker)
@@ -84,6 +228,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         else
         {
             studentIEP.enabled = false
+            studentIEP.text = ""
+            studentIEP.layer.borderWidth = 0
+            studentIEP.layer.borderColor = UIColor.whiteColor().CGColor
         }
     }
 
@@ -96,6 +243,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         else
         {
             student401Report.enabled = false
+            student401Report.text = ""
+            student401Report.layer.borderWidth = 0
+            student401Report.layer.borderColor = UIColor.whiteColor().CGColor
         }
     }
     
