@@ -1,0 +1,2 @@
+###Lab 3: 
+Create an app that includes multiple textfields, does a calcluation, and shows an alert or action sheet for some condition. The keyboard should be dismissed when the user taps the Done/Return key or touches the background view(hint: chapter 4 of the book) from all textfields. Your app should work for all size iPhones in portrait and landscape orientation. Don't forget your app icons and launch screen.
