@@ -42,6 +42,8 @@ class ViewController: UIViewController {
     var timer = NSTimer()
     var elapsedTime = 0
     
+    static let TIMELIMIT = 16
+    
     struct player
     {
         var mySprite: UIImage
@@ -100,19 +102,16 @@ class ViewController: UIViewController {
         }
         
         //reset timer
-        timeInSeconds = 16
+        timeInSeconds = ViewController.TIMELIMIT
 
     }
     
-    @IBAction func resetGame(sender: AnyObject) {
-        initGame()
-        resetBoardDisplay()
+    @IBAction func stopButtonPressed(sender: UIButton) {
         
+        enableButtons(false)
         timeInSeconds = 0
         timer.invalidate()
         
-        initializeTimer()
-        updateTimerLabel()
     }
     
     func resetBoardDisplay()
@@ -176,25 +175,23 @@ class ViewController: UIViewController {
         
     }
     
+    
     func updateTimerLabel()
     {
         timeInSeconds = timeInSeconds + 1
-        timeInSeconds = timeInSeconds % 16
+        timeInSeconds = timeInSeconds % ViewController.TIMELIMIT
         
-        timerDisplay.text = "Time Elapsed: "+String(timeInSeconds)
+        timerDisplay.text = "Time Remaining: "+String(ViewController.TIMELIMIT - timeInSeconds)
         
-        
-        if(timeInSeconds > 5 && timeInSeconds <= 10)
-        {
-            timerDisplay.textColor = UIColor.brownColor()
-        }
-        else if(timeInSeconds > 10 && timeInSeconds <= 15)
-        {
-            timerDisplay.textColor = UIColor.redColor()
-        }
-        else
-        {
+        switch timeInSeconds {
+        case 0..<6:
             timerDisplay.textColor = UIColor.blackColor()
+        
+        case 6..<11:
+            timerDisplay.textColor = UIColor.brownColor()
+        
+        default:
+            timerDisplay.textColor = UIColor.redColor()
         }
         
         if(timeInSeconds == 15)
@@ -224,16 +221,42 @@ class ViewController: UIViewController {
     {
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector:#selector(ViewController.updateTimerLabel), userInfo: nil, repeats: true)
     }
+    @IBAction func startButtonPressed(sender: UIButton) {
+        
+        resetBoardDisplay()
+        enableButtons(true)
+
+        timeInSeconds = elapsedTime
+        initializeTimer()
+       
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.pauseTimer), name: UIApplicationDidEnterBackgroundNotification, object: nil)
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.resumeTimer), name: UIApplicationDidBecomeActiveNotification, object: nil)
+    }
+    
+    func enableButtons(flag : Bool)
+    {
+    
+        center.enabled = flag
+        centerLeft.enabled = flag
+        centerRight.enabled = flag
+        
+        topLeft.enabled = flag
+        topCenter.enabled = flag
+        topRight.enabled = flag
+        
+        bottomLeft.enabled = flag
+        bottomCenter.enabled = flag
+        bottomRight.enabled = flag
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
       
         initGame()
         
-        timeInSeconds = elapsedTime
-        initializeTimer()
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.pauseTimer), name: UIApplicationDidEnterBackgroundNotification, object: nil)
+
        
         //loading the border for the buttons
         center.layer.borderWidth = 1
@@ -263,9 +286,8 @@ class ViewController: UIViewController {
         bottomRight.layer.borderWidth = 1
         bottomRight.layer.borderColor = UIColor.blackColor().CGColor
         
-        
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.resumeTimer), name: UIApplicationDidBecomeActiveNotification, object: nil)
+        //disable buttons until start is pressed
+        enableButtons(false)
         
     }
 
