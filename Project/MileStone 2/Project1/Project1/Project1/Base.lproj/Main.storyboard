@@ -190,7 +190,9 @@
                             <constraint firstItem="6zy-mD-FaG" firstAttribute="top" secondItem="TKr-5G-bBd" secondAttribute="bottom" constant="8" id="Dm4-zU-tF4"/>
                             <constraint firstItem="kzH-AI-VOD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-29" id="Fzk-7y-h4V"/>
                             <constraint firstItem="Mw7-ok-JEU" firstAttribute="leading" secondItem="rGn-wr-aZN" secondAttribute="trailing" constant="45" id="HuD-Y3-9dW"/>
-                            <constraint firstItem="kzH-AI-VOD" firstAttribute="top" secondItem="p8n-41-z7n" secondAttribute="bottom" constant="110" id="IdS-9m-zPH"/>
+                            <constraint firstItem="kzH-AI-VOD" firstAttribute="top" secondItem="p8n-41-z7n" secondAttribute="bottom" constant="110" id="IdS-9m-zPH">
+                                <variation key="heightClass=compact" constant="80"/>
+                            </constraint>
                             <constraint firstItem="hPO-tn-vSY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="29" id="JoQ-MF-Z4X"/>
                             <constraint firstItem="a3g-eA-ibf" firstAttribute="leading" secondItem="uRU-Ex-uVe" secondAttribute="leading" constant="13" id="LWF-Kk-Jyg"/>
                             <constraint firstItem="BGy-dZ-QVI" firstAttribute="leading" secondItem="rGn-wr-aZN" secondAttribute="leading" id="Mn1-k1-zeq"/>
@@ -230,6 +232,7 @@
                         <outlet property="playerOneSpriteDisplay" destination="6zy-mD-FaG" id="R3G-4r-10b"/>
                         <outlet property="playerTwoLabel" destination="uRU-Ex-uVe" id="Zab-6f-sbf"/>
                         <outlet property="playerTwoSpriteDisplay" destination="a3g-eA-ibf" id="R2e-OJ-aoE"/>
+                        <outlet property="startButton" destination="VMm-Xf-Rs4" id="0Db-VR-FXh"/>
                         <outlet property="timerDisplay" destination="p8n-41-z7n" id="xSE-9f-YRl"/>
                         <outlet property="topCenter" destination="igP-aD-QSU" id="ybc-Xw-kGT"/>
                         <outlet property="topLeft" destination="3mP-JA-z2l" id="J59-29-9R5"/>

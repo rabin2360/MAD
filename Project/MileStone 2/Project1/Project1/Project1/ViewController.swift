@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerOneLabel: UILabel!
     @IBOutlet weak var playerTwoLabel: UILabel!
     
+    @IBOutlet weak var startButton: UIButton!
     let xButton = UIImage(named: "x_button") as UIImage?
     let oButton = UIImage(named: "o_button") as UIImage?
     
@@ -111,7 +112,7 @@ class ViewController: UIViewController {
         enableButtons(false)
         timeInSeconds = 0
         timer.invalidate()
-        
+        startButton.enabled = true
     }
     
     func resetBoardDisplay()
@@ -233,6 +234,9 @@ class ViewController: UIViewController {
         
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.resumeTimer), name: UIApplicationDidBecomeActiveNotification, object: nil)
+
+        //disable the button until stop is pressed again
+        startButton.enabled = false
     }
     
     func enableButtons(flag : Bool)
