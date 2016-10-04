@@ -24,8 +24,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Book name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cj-7h-km0">
-                                <rect key="frame" x="279" y="146" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cj-7h-km0">
+                                <rect key="frame" x="251" y="146" width="99" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -36,19 +36,19 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="QVy-5I-LCC"/>
                                     <barButtonItem title="Item" id="Vdv-1f-1AE">
                                         <connections>
-                                            <segue destination="EFY-td-dQi" kind="presentation" identifier="favInfo" id="YOT-ap-J5O"/>
+                                            <segue destination="EFY-td-dQi" kind="presentation" identifier="displayFav" id="g7s-aX-tkm"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Author name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSl-Eh-WrN">
-                                <rect key="frame" x="279" y="192" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSl-Eh-WrN">
+                                <rect key="frame" x="251" y="192" width="99" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18O-Y4-ey0">
-                                <rect key="frame" x="279" y="238" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18O-Y4-ey0">
+                                <rect key="frame" x="251" y="238" width="99" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -72,14 +72,14 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bookYear" destination="18O-Y4-ey0" id="8id-da-b4W"/>
-                        <outlet property="favoriteAuthor" destination="7cj-7h-km0" id="Pkj-G7-zYN"/>
-                        <outlet property="favoriteBook" destination="TSl-Eh-WrN" id="gX2-RL-dpp"/>
+                        <outlet property="bookYear" destination="18O-Y4-ey0" id="i6s-GT-Ozc"/>
+                        <outlet property="favoriteAuthor" destination="7cj-7h-km0" id="xvf-W0-yk7"/>
+                        <outlet property="favoriteBook" destination="TSl-Eh-WrN" id="oVK-Bu-ovc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-118" y="216"/>
+            <point key="canvasLocation" x="110" y="216"/>
         </scene>
         <!--Scene2 View Controller-->
         <scene sceneID="w8B-QX-ehp">
@@ -134,7 +134,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="tRh-v8-ffW"/>
                                     <barButtonItem title="Done" id="5iy-Vd-RW8">
                                         <connections>
-                                            <segue destination="pDB-IH-aRe" kind="unwind" identifier="doneFavs" unwindAction="unwindSegue:" id="JNi-V6-n3j"/>
+                                            <segue destination="pDB-IH-aRe" kind="unwind" identifier="doneFavs" unwindAction="unwindSegue:" id="lNn-O8-zFA"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -195,15 +195,15 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="bookYear" destination="5Oj-KP-zAs" id="Phe-6i-2hM"/>
-                        <outlet property="favoriteAuthor" destination="3KY-aT-BeS" id="F3h-MD-eUc"/>
-                        <outlet property="favoriteBook" destination="AcS-xR-htN" id="xnW-oj-rqh"/>
+                        <outlet property="bookYear" destination="5Oj-KP-zAs" id="wuq-jW-Mdy"/>
+                        <outlet property="favoriteAuthor" destination="AcS-xR-htN" id="JlZ-04-hHN"/>
+                        <outlet property="favoriteBook" destination="3KY-aT-BeS" id="D2S-bz-F3V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yc-g9-eQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="pDB-IH-aRe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="502" y="222"/>
+            <point key="canvasLocation" x="812" y="216"/>
         </scene>
     </scenes>
 </document>

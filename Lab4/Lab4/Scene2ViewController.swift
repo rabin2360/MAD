@@ -10,8 +10,9 @@ import UIKit
 
 class Scene2ViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var favoriteAuthor: UITextField!
+  
     @IBOutlet weak var favoriteBook: UITextField!
+    @IBOutlet weak var favoriteAuthor: UITextField!
     @IBOutlet weak var bookYear: UITextField!
     
     let numberToolbar: UIToolbar = UIToolbar()
@@ -19,11 +20,14 @@ class Scene2ViewController: UIViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "doneFavs"
         {
+            
             let scene1ViewController = segue.destinationViewController as! ViewController
+            
             
             if favoriteAuthor.text!.isEmpty == false
             {
                 scene1ViewController.user.favAuthor = favoriteAuthor.text
+                
             }
             
             if favoriteBook.text!.isEmpty == false
@@ -34,8 +38,11 @@ class Scene2ViewController: UIViewController, UITextFieldDelegate {
             if bookYear.text!.isEmpty == false
             {
                 scene1ViewController.user.year = bookYear.text
-                
             }
+            
+            
+            print("here \(scene1ViewController.user.favAuthor)")
+            
         
         }
     }

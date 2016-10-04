@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "86123CEB1DA2E23300DB98F8"
+               BlueprintIdentifier = "86533D701DA3599D00E4FB2D"
                BuildableName = "Lab4.app"
                BlueprintName = "Lab4"
                ReferencedContainer = "container:Lab4.xcodeproj">
@@ -28,11 +28,31 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "86533D871DA3599E00E4FB2D"
+               BuildableName = "Lab4Tests.xctest"
+               BlueprintName = "Lab4Tests"
+               ReferencedContainer = "container:Lab4.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "86533D921DA3599E00E4FB2D"
+               BuildableName = "Lab4UITests.xctest"
+               BlueprintName = "Lab4UITests"
+               ReferencedContainer = "container:Lab4.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "86123CEB1DA2E23300DB98F8"
+            BlueprintIdentifier = "86533D701DA3599D00E4FB2D"
             BuildableName = "Lab4.app"
             BlueprintName = "Lab4"
             ReferencedContainer = "container:Lab4.xcodeproj">
@@ -55,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "86123CEB1DA2E23300DB98F8"
+            BlueprintIdentifier = "86533D701DA3599D00E4FB2D"
             BuildableName = "Lab4.app"
             BlueprintName = "Lab4"
             ReferencedContainer = "container:Lab4.xcodeproj">
@@ -74,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "86123CEB1DA2E23300DB98F8"
+            BlueprintIdentifier = "86533D701DA3599D00E4FB2D"
             BuildableName = "Lab4.app"
             BlueprintName = "Lab4"
             ReferencedContainer = "container:Lab4.xcodeproj">

@@ -13,11 +13,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var favoriteAuthor: UILabel!
     @IBOutlet weak var favoriteBook: UILabel!
     @IBOutlet weak var bookYear: UILabel!
-    
+
     var user = Favorite()
     
     @IBAction func unwindSegue(segue:UIStoryboardSegue)
     {
+        print(user.favAuthor)
+        print(user.favBook)
+        print(user.year)
+        
+        //let tempFavBook = user.favBook!
+        
         favoriteAuthor.text = user.favAuthor
         favoriteBook.text = user.favBook
         bookYear.text = user.year
