@@ -69,6 +69,7 @@ class ViewController: UIViewController {
         case TWO_PLAYER
     }
     
+    //struct with player attributes
     struct player
     {
         var mySprite: UIImage
@@ -82,6 +83,7 @@ class ViewController: UIViewController {
         return Int(arc4random_uniform(2))
     }
     
+    //win logic for the game
     func gameWon() -> Bool
     {
         var hasWon = false
@@ -211,12 +213,8 @@ class ViewController: UIViewController {
         return false
     }
     
-    @IBAction func changeGameMode(sender: UISegmentedControl) {
-        
-        selectPlayer()
-       
-    }
-    
+
+    //takes the tag of the sender button and then if empty, places appropriate sprite for the current player
     func twoPlayerMode(sender: UIButton)
     {
     
@@ -235,13 +233,13 @@ class ViewController: UIViewController {
 
     
     }
-    
+    //takes the given index and populates them with sprite
     func populateButtonsWithSprite(rowIndex: Int, colIndex: Int) -> Bool
     {
         var tempTag = -11
         tempTag = rowIndex*10
         tempTag = tempTag + colIndex
-        print("\(rowIndex)\(colIndex)")
+        //print("\(rowIndex)\(colIndex)")
         let tempButton = self.view.viewWithTag(tempTag) as? UIButton
         
         if(tempButton != nil){
@@ -257,6 +255,7 @@ class ViewController: UIViewController {
         return false
     }
     
+    //takes the given array of indices and populates them with sprite if empty
     func checkGivenIndices(indices: [Int])->Bool
     {
         for index: Int in indices
@@ -275,9 +274,9 @@ class ViewController: UIViewController {
         return false
     }
     
+    //AI logic for single player mode
     func singlePlayerMode()
     {
-        //print("Perform AI")
         //check if the middle of the board is empty
         if(ticTacToeBoard[1][1] == "false")
         {
@@ -306,14 +305,14 @@ class ViewController: UIViewController {
                     {
                         count += 1
                     }
-                    else
+                    else if (ticTacToeBoard[rows][columns] == "false")
                     {
                         rowIndex = rows
                         colIndex = columns
                     }
                 }
                 
-                if(count == 2 && ticTacToeBoard[rowIndex][colIndex] == "false")
+                if(colIndex != -1 && rowIndex != -1 && count == 2 && ticTacToeBoard[rowIndex][colIndex] == "false")
                 {
                     if(populateButtonsWithSprite(rowIndex, colIndex: colIndex)){
                         return
@@ -323,7 +322,6 @@ class ViewController: UIViewController {
             }
             
 
-            //check rows
             //check along the rows
           
             for rows in 0 ..< ticTacToeBoard[0].count
@@ -337,14 +335,14 @@ class ViewController: UIViewController {
                     {
                         count += 1
                     }
-                    else
+                    else if(ticTacToeBoard[rows][columns] == "false")
                     {
                         rowIndex = rows
                         colIndex = columns
                     }
                 }
                 
-                if(count == 2 && ticTacToeBoard[rowIndex][colIndex] == "false")
+                if(rowIndex != -1 && colIndex != -1 && count == 2 && ticTacToeBoard[rowIndex][colIndex] == "false")
                 {
                     if(populateButtonsWithSprite(rowIndex, colIndex: colIndex)){
                         return
@@ -377,7 +375,6 @@ class ViewController: UIViewController {
             
             
             //check diagonal - right to left
-                //check diagonal - right to left
                 rowIndex = 0
                 colIndex = 2
                 count = 0
@@ -420,46 +417,51 @@ class ViewController: UIViewController {
         }
     }
     
+    //this is the sequence called to stop the game
+    func stopSequence()
+    {
+        enableButtons(false)
+        stopTimer()
+        startButton.enabled = true
+        single2PlayerSelection.enabled = true
+        stopButton.enabled = false
+    }
+    
+    //determine if game won, otherwise change turns
+    //also change the state of the game appropriately from PLAYING to STOPPED and vice versa
     func determineWinner()
     {
     
         if(gameWon())
         {
             winnerDisplay.text = (currentPlayer?.name)! + " won!"
-            gameState = GameState.STOPPED
-            
-            enableButtons(false)
-            timeInSeconds = 0
-            timer.invalidate()
-            
-            startButton.enabled = true
-            single2PlayerSelection.enabled = true
-            stopButton.enabled = false
+            stopSequence()
         }
         else if(movesLeft <= 0)
         {
             winnerDisplay.text = "Tie!"
             gameState = GameState.STOPPED
             
-            enableButtons(false)
-            timeInSeconds = 0
-            timer.invalidate()
-            
-            startButton.enabled = true
-            single2PlayerSelection.enabled = true
-            stopButton.enabled = false
+            stopSequence()
             
         }
         else
         {
-            //print("moves left: \(movesLeft)")
             changeTurns()
             gameState = GameState.PLAYING
             
         }
         
+        if(gameWon())
+        {
+            gameState = GameState.STOPPED
+        }
+        
+      
     }
     
+    //for all the buttons in the tic-tac-toe board, this method is triggered
+    //based on the game mode and the current player, the logic is appropriately routed
     @IBAction func buttonPressed(sender: UIButton) {
     
         if(gameMode == GameMode.TWO_PLAYER)
@@ -469,51 +471,53 @@ class ViewController: UIViewController {
         else if(gameMode == GameMode.SINGLE_PLAYER && currentPlayer?.name == "Player One")
         {
             twoPlayerMode(sender)
-            //enableButtons(true)
         }
-        
         
         determineWinner()
         
 
         if(gameMode == GameMode.SINGLE_PLAYER && currentPlayer?.name == "Player Two")
         {
-            //sender.sendActionsForControlEvents(.TouchUpInside)
             singlePlayerMode()
             determineWinner()
-            //changeTurns()
         }
-
-        /*
-        for columns in 0 ..< ticTacToeBoard.count
-        {
-            for rows in 0 ..< ticTacToeBoard[columns].count
-            {
-                print(ticTacToeBoard[columns][rows],terminator:", ")
-            }
-            
-            print()
-        }*/
         
     }
     
+    //if currently player one turn
+    //set the turn of player one to false
+    //change background highlights appropriately
+    //set current player at player two
+    func playerOneTurn()
+    {
+        playerOne!.myTurn = false
+        playerTwoLabel.backgroundColor = UIColor.grayColor()
+        playerOneLabel.backgroundColor = UIColor.whiteColor()
+        currentPlayer = playerTwo
+    }
+    
+    //same as above but just reverse
+    func playerTwoTurn()
+    {
+        playerOne!.myTurn = true
+        playerOneLabel.backgroundColor = UIColor.grayColor()
+        playerTwoLabel.backgroundColor = UIColor.whiteColor()
+        currentPlayer = playerOne
+    }
+    
+    //changing turns appropriately depending on whether the game is in single player mode or 
+    //two player mode
     func changeTurns()
     {
         if(gameMode == GameMode.TWO_PLAYER){
         //changing the turn
             if(playerOne!.myTurn)
             {
-            playerOne!.myTurn = false
-            playerTwoLabel.backgroundColor = UIColor.grayColor()
-            playerOneLabel.backgroundColor = UIColor.whiteColor()
-            currentPlayer = playerTwo
+                playerOneTurn()
             }
             else
             {
-            playerOne!.myTurn = true
-            playerOneLabel.backgroundColor = UIColor.grayColor()
-            playerTwoLabel.backgroundColor = UIColor.whiteColor()
-            currentPlayer = playerOne
+                playerTwoTurn()
             }
         }
         else
@@ -521,21 +525,13 @@ class ViewController: UIViewController {
         
             if(playerOne!.myTurn)
             {
-                playerOne!.myTurn = false
-                playerTwoLabel.backgroundColor = UIColor.grayColor()
-                playerOneLabel.backgroundColor = UIColor.whiteColor()
-                currentPlayer = playerTwo
-                
+                playerOneTurn()
                 singlePlayerMode()
                 determineWinner()
             }
             else
             {
-                playerOne!.myTurn = true
-                playerOneLabel.backgroundColor = UIColor.grayColor()
-                playerTwoLabel.backgroundColor = UIColor.whiteColor()
-                currentPlayer = playerOne
-
+                playerTwoTurn()
             }
         }
         
@@ -548,33 +544,18 @@ class ViewController: UIViewController {
         
         //the state of the game is stopped
         gameState = GameState.STOPPED
-        
-        enableButtons(false)
-        timeInSeconds = 0
-        timer.invalidate()
-        
-        startButton.enabled = true
-        single2PlayerSelection.enabled = true
-        stopButton.enabled = false
+        stopSequence()
     }
     
-    func resetBoardDisplay()
-    {
-        topLeft.setBackgroundImage(nil, forState: .Normal)
-        topCenter.setBackgroundImage(nil, forState: .Normal)
-        topRight.setBackgroundImage(nil, forState: .Normal)
+
+    //called when segmented control is pressed
+    @IBAction func changeGameMode(sender: UISegmentedControl) {
         
-        centerLeft.setBackgroundImage(nil, forState: .Normal)
-        center.setBackgroundImage(nil, forState: .Normal)
-        centerRight.setBackgroundImage(nil, forState: .Normal)
-        
-        
-        bottomLeft.setBackgroundImage(nil, forState: .Normal)
-        bottomCenter.setBackgroundImage(nil, forState: .Normal)
-        bottomRight.setBackgroundImage(nil, forState: .Normal)
-        
+        selectPlayer()
     }
     
+    //segmented control listener method calls this
+    //also called by the init method at the beginning of the game
     func selectPlayer()
     {
         if(single2PlayerSelection.selectedSegmentIndex == 0)
@@ -624,6 +605,24 @@ class ViewController: UIViewController {
             gameMode = GameMode.SINGLE_PLAYER
         }
     }
+    
+    //resetting the display images of the buttons in the tic-tac-toe board
+    func resetBoardDisplay()
+    {
+        topLeft.setBackgroundImage(nil, forState: .Normal)
+        topCenter.setBackgroundImage(nil, forState: .Normal)
+        topRight.setBackgroundImage(nil, forState: .Normal)
+        
+        centerLeft.setBackgroundImage(nil, forState: .Normal)
+        center.setBackgroundImage(nil, forState: .Normal)
+        centerRight.setBackgroundImage(nil, forState: .Normal)
+        
+        
+        bottomLeft.setBackgroundImage(nil, forState: .Normal)
+        bottomCenter.setBackgroundImage(nil, forState: .Normal)
+        bottomRight.setBackgroundImage(nil, forState: .Normal)
+        
+    }
 
     func initGame()
     {
@@ -639,25 +638,13 @@ class ViewController: UIViewController {
         //disable stop button
         stopButton.enabled = false
         
-        /*for columns in 0 ..< ticTacToeBoard.count
-        {
-            for rows in 0 ..< ticTacToeBoard[columns].count
-            {
-                print(ticTacToeBoard[columns][rows],terminator:", ")
-            }
-            
-            print()
-        }
-        */
-        
-        
         //setting the symbols assigned to each player
         playerOneSpriteDisplay.image = playerOne?.mySprite
         playerTwoSpriteDisplay.image = playerTwo?.mySprite
         
     }
     
-    
+    //called every second
     func updateTimerLabel()
     {
         timeInSeconds = timeInSeconds + 1
@@ -676,29 +663,38 @@ class ViewController: UIViewController {
             timerDisplay.textColor = UIColor.redColor()
         }
         
-        if(timeInSeconds == 15)
+        if(timeInSeconds == (ViewController.TIMELIMIT-1))
         {
             changeTurns()
         }
 
     }
     
+    //called to stop the timer
+    func stopTimer()
+    {
+        timeInSeconds = 0
+        timer.invalidate()
+    }
+    
+    //called when entering background
     func pauseTimer()
     {
         elapsedTime = timeInSeconds
         timer.invalidate()
     }
     
+    //called when entering foreground
     func resumeTimer()
     {
         //timer will only resume if the state of the game before going to background was playing
         if(gameState == GameState.PLAYING)
         {
-        timeInSeconds = elapsedTime
+            timeInSeconds = elapsedTime
         
-        //invalidate any previous timers
-        timer.invalidate()
-        initializeTimer()
+            //invalidate any previous timers
+            timer.invalidate()
+            initializeTimer()
         }
     }
     
@@ -711,6 +707,7 @@ class ViewController: UIViewController {
         
         initGame()
         resetBoardDisplay()
+        
         gameState = GameState.PLAYING
         enableButtons(true)
         winnerDisplay.text = ""
@@ -729,6 +726,7 @@ class ViewController: UIViewController {
         single2PlayerSelection.enabled = false
     }
     
+    //enable/disable the buttons based on the input parameter flag
     func enableButtons(flag : Bool)
     {
     
@@ -745,12 +743,11 @@ class ViewController: UIViewController {
         bottomRight.enabled = flag
     }
     
+    //loading the first look of the game with all the button backgrounds set as white
     override func viewDidLoad() {
         super.viewDidLoad()
       
         initGame()
-        
-
        
         //loading the border for the buttons
         center.layer.borderWidth = 1
