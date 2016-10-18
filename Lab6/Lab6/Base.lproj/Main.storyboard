@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lab6" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tinaBobsBurger" translatesAutoresizingMaskIntoConstraints="NO" id="uk1-3C-NH2">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Zyd-XC-6zN"/>
+                                    <constraint firstAttribute="width" constant="200" id="q7v-Mb-JXs"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="sLn-OL-OU4" appends="YES" id="hwd-Ee-fUq"/>
+                                    <outletCollection property="gestureRecognizers" destination="d9W-5g-9UJ" appends="YES" id="44v-mb-72C"/>
+                                    <outletCollection property="gestureRecognizers" destination="DnL-HH-Jgz" appends="YES" id="dEe-ot-i3R"/>
+                                    <outletCollection property="gestureRecognizers" destination="fSH-TZ-cz4" appends="YES" id="cA7-ZQ-bJl"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uk1-3C-NH2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JLe-a5-kAb"/>
+                            <constraint firstItem="uk1-3C-NH2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="v7x-7H-h6A"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="sLn-OL-OU4">
+                    <connections>
+                        <action selector="handlePan:" destination="BYZ-38-t0r" id="FoX-nS-ORr"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="YLD-nj-igu"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pinchGestureRecognizer id="d9W-5g-9UJ">
+                    <connections>
+                        <action selector="handlePinch:" destination="BYZ-38-t0r" id="hOn-Kb-aXS"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="ect-uf-GYU"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="DnL-HH-Jgz">
+                    <connections>
+                        <action selector="handleRotate:" destination="BYZ-38-t0r" id="MRr-4e-XLL"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="RNt-PU-EUS"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="fSH-TZ-cz4">
+                    <connections>
+                        <action selector="handleLongPress:" destination="BYZ-38-t0r" id="3ed-oi-y4z"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="4LF-0z-x2u"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="305" y="418"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tinaBobsBurger" width="375" height="360"/>
+    </resources>
+</document>
