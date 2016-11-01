@@ -8,3 +8,5 @@ Table of Contents for MAD Assignment(s):
 * Midterm 
 * Lab 5
 * Lab 6
+* Grad Project (contains milestone 1)
+* Project 2 (contains milestone 1)
