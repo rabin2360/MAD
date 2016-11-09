@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Student Form</string>
+    <string name="student_form_title"><b>Student Information Form</b></string>
+    <string name="toggle_on">On Campus</string>
+    <string name="toggle_off">Off Campus</string>
+    <string name="meditate_switch">Meditate</string>
+
+    <string name="check1">Soccer</string>
+    <string name="check2">Baseball</string>
+
+    <string-array name="studentGrades">
+        <item>Freshman</item>
+        <item>Sophomore</item>
+        <item>Junior</item>
+        <item>Senior</item>
+    </string-array>
+
+</resources>
+
