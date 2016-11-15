@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/observationScreenLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.rabin.testapplication.ObservationScreen"
+    android:weightSum="1">
+
+
+    <Button
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:text="@string/start"
+        android:id="@+id/startButton"
+        android:layout_gravity="bottom"
+        android:background="@drawable/round_button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:onClick="startButtonPressed" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Observation Screen"
+        android:id="@+id/textView"
+        android:layout_weight="0.95"
+        android:textSize="25dp"
+        android:textAlignment="center"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="#0f0404"
+        android:background="#afaaaa" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00:00"
+        android:id="@+id/timeDisplay"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:textSize="40dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop"
+        android:id="@+id/stopButton"
+        android:layout_alignTop="@+id/timeDisplay"
+        android:layout_toRightOf="@+id/timeDisplay"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textSize="20dp"
+        android:background="#f31a1a"
+        android:onClick="stopButtonPressed"
+        android:height="25dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Observation Info"
+        android:id="@+id/observationSettingsButton"
+        android:textSize="20dp"
+        android:onClick="ObservationInfo"
+        android:layout_alignTop="@+id/timeDisplay"
+        android:layout_toLeftOf="@+id/timeDisplay"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:height="25dp"
+        android:background="#766e6e" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Observing/Listening"
+        android:id="@+id/stdObsButton"
+        android:layout_below="@+id/observationSettingsButton"
+        android:layout_toLeftOf="@+id/timeDisplay"
+        android:layout_toStartOf="@+id/timeDisplay"
+        android:layout_marginTop="100dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button2"
+        android:id="@+id/button"
+        android:layout_below="@+id/stdObsButton"
+        android:layout_alignRight="@+id/stdObsButton"
+        android:layout_alignEnd="@+id/stdObsButton"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@+id/stdObsButton"
+        android:layout_alignStart="@+id/stdObsButton" />
+
+</RelativeLayout>

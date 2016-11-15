@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_element"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c0a8a4a4">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:id="@+id/popUpOkayButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:id="@+id/popUpCancelButton"
+        android:layout_alignTop="@+id/popUpOkayButton"
+        android:layout_alignBottom="@+id/popUpOkayButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Teacher Information"
+        android:id="@+id/teacherInfoLabel"
+        android:textSize="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textAlignment="center"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/teacherFirstName"
+        android:hint="Teacher&apos;s First Name*"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_alignTop="@+id/currentClass"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:editable="true"
+        android:inputType="text"
+        android:nextFocusDown="@+id/teacherLastName"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/teacherLastName"
+        android:hint="Teacher&apos;s Last Name*"
+        android:layout_alignTop="@+id/teacherFirstName"
+        android:layout_centerHorizontal="true"
+        android:nextFocusDown="@+id/currentClass"
+        android:inputType="text"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/currentClass"
+        android:hint="Current Class"
+        android:layout_below="@+id/teacherInfoLabel"
+        android:layout_toRightOf="@+id/teacherLastName"
+        android:layout_toEndOf="@+id/teacherLastName"
+        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp"
+        android:nextFocusDown="@+id/observerFirstName"
+        android:inputType="text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Observer Information"
+        android:id="@+id/observerInfoLabel"
+        android:layout_below="@+id/teacherLastName"
+        android:layout_marginTop="30dp"
+        android:textSize="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/popUpCancelButton"
+        android:layout_alignEnd="@+id/popUpCancelButton"
+        android:textAlignment="center" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/observerFirstName"
+        android:layout_below="@+id/observerInfoLabel"
+        android:layout_alignLeft="@+id/teacherFirstName"
+        android:layout_alignStart="@+id/teacherFirstName"
+        android:hint="Observer&apos;s First Name*"
+        android:nextFocusDown="@+id/observerLastName"
+        android:inputType="text"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/observerLastName"
+        android:hint="Observer&apos;s Last Name*"
+        android:textAlignment="center"
+        android:layout_below="@+id/observerInfoLabel"
+        android:layout_alignLeft="@+id/teacherLastName"
+        android:layout_alignStart="@+id/teacherLastName"
+        android:nextFocusDown="@+id/observerTitle"
+        android:inputType="text"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/observerTitle"
+        android:hint="Observer&apos;s Title"
+        android:layout_below="@+id/observerInfoLabel"
+        android:layout_alignLeft="@+id/currentClass"
+        android:layout_alignStart="@+id/currentClass"
+        android:inputType="text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Observation Settings"
+        android:id="@+id/observationSettings"
+        android:layout_below="@+id/observerLastName"
+        android:layout_marginTop="40dp"
+        android:textSize="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/popUpCancelButton"
+        android:layout_alignEnd="@+id/popUpCancelButton"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Observation Time"
+        android:id="@+id/observationTimeLabel"
+        android:layout_marginTop="33dp"
+        android:textSize="20dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginStart="37dp"
+        android:layout_below="@+id/observationSettings"
+        android:layout_toRightOf="@+id/popUpOkayButton"
+        android:layout_toEndOf="@+id/popUpOkayButton"
+        android:textAlignment="center" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/observationTotalTime"
+        android:layout_alignTop="@+id/observationTimeLabel"
+        android:spinnerMode="dialog"
+        android:layout_alignBottom="@+id/observationTimeLabel"
+        android:layout_toLeftOf="@+id/currentClass"
+        android:layout_toStartOf="@+id/currentClass" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Observation Frequency"
+        android:id="@+id/observationFrequencyLabel"
+        android:layout_below="@+id/observationTimeLabel"
+        android:layout_alignLeft="@+id/observationTimeLabel"
+        android:layout_alignStart="@+id/observationTimeLabel"
+        android:layout_marginTop="36dp"
+        android:layout_alignRight="@+id/observationTimeLabel"
+        android:layout_alignEnd="@+id/observationTimeLabel"
+        android:textSize="20dp"
+        android:textAlignment="center" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/observationFrequency"
+        android:layout_alignTop="@+id/observationFrequencyLabel"
+        android:layout_alignLeft="@+id/observationTotalTime"
+        android:layout_alignStart="@+id/observationTotalTime"
+        android:spinnerMode="dialog"
+        android:layout_alignBottom="@+id/observationFrequencyLabel"
+        android:layout_alignRight="@+id/observationTotalTime"
+        android:layout_alignEnd="@+id/observationTotalTime"
+        android:clickable="true"/>
+
+</RelativeLayout>
