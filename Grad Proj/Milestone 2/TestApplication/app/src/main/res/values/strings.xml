@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">TestApplication</string>
+    <string name="student_name">Student Name*</string>
+    <string name="start">Start</string>
+    <string name="observation_screen">Observation Screen</string>
+    <string name="timerDisplay">00:00:00</string>
+    <string name="stopButtonText">Stop</string>
+    <string name="observationButtonLabel">Observation Info</string>
+    <string name="participating">Participating</string>
+    <string name="observing">Observing</string>
+    <string name="disengaged">Disengaged</string>
+    <string name="verbal">Verbal</string>
+    <string name="motor">Motor</string>
+    <string name="aggressive">Aggressive</string>
+    <string name="out_of_seat">Out Of Seat</string>
+</resources>
