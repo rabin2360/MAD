@@ -62,9 +62,9 @@
         android:onClick="stopButtonPressed"
         android:height="25dp" />
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="@string/observationButtonLabel"
         android:id="@+id/observationSettingsButton"
         android:textSize="20sp"
@@ -74,7 +74,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:height="25dp"
-        android:background="#766e6e" />
+        android:background="#766e6e"
+        android:src="@drawable/settings"
+        android:scaleType="fitCenter"
+        />
 
     <ToggleButton
         android:layout_width="180dp"
@@ -84,7 +87,7 @@
         android:layout_below="@+id/observationSettingsButton"
         android:layout_toLeftOf="@+id/timeDisplay"
         android:layout_toStartOf="@+id/timeDisplay"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="180dp"
         android:textOff="@string/observing"
         android:textOn="@string/observing"
         android:background="@drawable/green_toggle_btn"
@@ -304,5 +307,53 @@
         android:layout_below="@+id/observationSettingsButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/frequency"
+        android:id="@+id/observationFrequencyDisplay"
+        android:layout_below="@+id/stageLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total_observation_time"
+        android:id="@+id/observationTotalTimeDisplay"
+        android:layout_below="@+id/observationFrequencyDisplay"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/observed_student"
+        android:id="@+id/observedStdLabel"
+        android:layout_above="@+id/prObsButton"
+        android:layout_alignLeft="@+id/stdObsButton"
+        android:layout_alignStart="@+id/stdObsButton"
+        android:layout_marginBottom="27dp"
+        android:layout_alignRight="@+id/stdObsButton"
+        android:layout_alignEnd="@+id/stdObsButton"
+        android:textSize="20sp"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/peer_std_label"
+        android:id="@+id/peerStdLabel"
+        android:layout_alignTop="@+id/observedStdLabel"
+        android:layout_alignLeft="@+id/prObsButton"
+        android:layout_alignStart="@+id/prObsButton"
+        android:layout_alignRight="@+id/prObsButton"
+        android:layout_alignEnd="@+id/prObsButton"
+        android:textSize="20sp"
+        android:gravity="center_horizontal"/>
+
 
 </RelativeLayout>

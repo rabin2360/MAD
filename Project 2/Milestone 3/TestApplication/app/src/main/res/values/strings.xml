@@ -20,6 +20,9 @@
     <string name="observer_information_label">Observer Information</string>
     <string name="title">Title</string>
     <string name="observation_settings_label">Observation Settings</string>
-    <string name="total_observation_time">Total Observation Time</string>
+    <string name="total_observation_time">Total Observation Time: </string>
     <string name="observation_frequency">Observation Frequency</string>
+    <string name="frequency">Frequency:</string>
+    <string name="observed_student">Observed Student</string>
+    <string name="peer_std_label">Peer Student</string>
 </resources>

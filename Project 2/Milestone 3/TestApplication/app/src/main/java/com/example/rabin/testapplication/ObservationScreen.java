@@ -15,12 +15,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import org.w3c.dom.Text;
 
 import java.util.HashMap;
 import java.util.Arrays;
@@ -29,7 +32,7 @@ public class ObservationScreen extends AppCompatActivity {
 
     private Button startButton;
     private Button stopButton;
-    private Button observationSettingsButton;
+    private ImageButton observationSettingsButton;
 
     private TextView timerDisplay;
     private RelativeLayout observationLayout;
@@ -71,6 +74,8 @@ public class ObservationScreen extends AppCompatActivity {
     private EditText observerLastName;
     private EditText observerTitle;
     private TextView stageLabel;
+    private TextView observationFrequencyLabel;
+    private TextView observationTotalTimeLabel;
 
     private boolean startButtonPressed;
 
@@ -100,7 +105,7 @@ public class ObservationScreen extends AppCompatActivity {
 
         utility = new Utilities();
         observationInit();
-        enableObservationButtons(false);
+        //enableObservationButtons(false);
 
     }
 
@@ -135,7 +140,7 @@ public class ObservationScreen extends AppCompatActivity {
         startButton = (Button) findViewById(R.id.startButton);
         stopButton = (Button) findViewById(R.id.stopButton);
         timerDisplay = (TextView) findViewById(R.id.timeDisplay);
-        observationSettingsButton = (Button) findViewById(R.id.observationSettingsButton);
+        observationSettingsButton = (ImageButton) findViewById(R.id.observationSettingsButton);
         observationLayout = (RelativeLayout) findViewById(R.id.observationScreenLayout);
 
         stopButton.setEnabled(false);
@@ -181,6 +186,8 @@ public class ObservationScreen extends AppCompatActivity {
         currentStage = 1;
 
         stageLabel = (TextView) findViewById(R.id.stageLabel);
+        observationFrequencyLabel = (TextView) findViewById(R.id.observationFrequencyDisplay);
+        observationTotalTimeLabel = (TextView) findViewById(R.id.observationTotalTimeDisplay);
         enableDisableToggle(false);
 
         popUpInit();
@@ -188,7 +195,7 @@ public class ObservationScreen extends AppCompatActivity {
 
     public void ObservationInfo(View view)
     {
-        enableObservationButtons(false);
+        //enableObservationButtons(false);
         popUpInit();
         loadSettingsInfo();
     }
@@ -348,7 +355,7 @@ public class ObservationScreen extends AppCompatActivity {
                 if(noError)
                 {
                     totalStages = (enteredTotalTime *60)/enteredObservationFreq;
-                    stageLabel.setText("Stage: "+Integer.toString(currentStage)+"/"+Integer.toString(totalStages));
+                    displayParamsAndStage();
                     dialog.dismiss();
                 }
             }
@@ -388,6 +395,16 @@ public class ObservationScreen extends AppCompatActivity {
             System.out.println("here"+enteredObservationFreq);
             utility.setSpinnerInt(enteredObservationFreq, observationFrequency);
         }
+    }
+
+    private void displayParamsAndStage()
+    {
+        //display the stage
+        stageLabel.setText("Stage: "+Integer.toString(currentStage)+"/"+Integer.toString(totalStages));
+        observationFrequencyLabel.setText("Frequency: "+Integer.toString(enteredObservationFreq)+" seconds");
+        observationTotalTimeLabel.setText("Total Observation Time: "+Integer.toString(enteredTotalTime)+" minutes");
+        //Log.v("FREQUENCY", Integer.toString(enteredObservationFreq));
+        //Log.v("TOTAL TIME", Integer.toString(enteredTotalTime));
     }
 
     /*private View.OnClickListener popUpCancelButtonPressed = new View.OnClickListener()
@@ -512,7 +529,9 @@ public class ObservationScreen extends AppCompatActivity {
             startButtonStat = 0;
             stopButton.setEnabled(true);
             enableDisableToggle(true);
+            observationSettingsButton.setEnabled(false);
             Log.v("START", "start/resume");
+
         }
     }
 
@@ -524,6 +543,7 @@ public class ObservationScreen extends AppCompatActivity {
             handler.removeCallbacks(updateTimer);
             startButtonStat = 1;
             enableDisableToggle(false);
+            observationSettingsButton.setEnabled(true);
             Log.v("PAUSING", String.valueOf(startButtonStat));
         }
     }
@@ -579,8 +599,8 @@ public class ObservationScreen extends AppCompatActivity {
                         startButtonPressed = false;
                         currentStage = 1;
                         updateStages = false;
-                        stageLabel.setText("Stage: "+Integer.toString(currentStage)+"/"+Integer.toString(totalStages));
-
+                        observationSettingsButton.setEnabled(true);
+                        displayParamsAndStage();
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener()
@@ -725,16 +745,15 @@ public class ObservationScreen extends AppCompatActivity {
 
             if((seconds % enteredObservationFreq) == 0 && startButtonStat == 0)
             {
-                Log.v("TIME", String.valueOf(seconds));
-                refreshMethod();
 
                 if(updateStages)
                 {
+                    Log.v("TIME", String.valueOf(seconds));
                     updateStages = false;
                     currentStage++;
+                    refreshMethod();
                 }
-
-                stageLabel.setText("Stage: "+Integer.toString(currentStage)+"/"+Integer.toString(totalStages));
+                displayParamsAndStage();
 
                 //Log.v("CALL FUNCTION: ", "Call Refresh method");
                 //modFactor += 15;
