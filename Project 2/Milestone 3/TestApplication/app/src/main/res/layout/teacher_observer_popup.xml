@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_element"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/teacher_information_label"
+        android:id="@+id/teacherInfoLabel"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/teacherFirstName"
+        android:hint="@string/first_name"
+        android:inputType="text"
+        android:nextFocusDown="@+id/teacherLastName"
+        android:layout_weight="1"
+        />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/teacherLastName"
+            android:hint="@string/last_name"
+            android:nextFocusDown="@+id/currentClass"
+            android:inputType="text"
+            android:layout_weight="1"/>
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentClass"
+            android:hint="@string/current_class"
+            android:nextFocusDown="@+id/observerFirstName"
+            android:inputType="text"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/observer_information_label"
+        android:id="@+id/observerInfoLabel"
+        android:layout_below="@+id/teacherLastName"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="25sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/observerFirstName"
+        android:hint="@string/first_name"
+        android:nextFocusDown="@+id/observerLastName"
+        android:inputType="text"
+        android:layout_weight="1"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/observerLastName"
+        android:hint="@string/last_name"
+        android:nextFocusDown="@+id/observerTitle"
+        android:inputType="text"
+        android:layout_weight="1"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/observerTitle"
+        android:hint="@string/title"
+        android:inputType="text"
+        android:layout_weight="1"/>
+        </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/observation_settings_label"
+        android:id="@+id/observationSettings"
+        android:layout_marginTop="40dp"
+        android:textSize="25sp"
+        android:layout_gravity="center_horizontal"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_observation_time"
+            android:id="@+id/observationTimeLabel"
+            android:textSize="25sp"/>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/observationTotalTime"
+            android:spinnerMode="dropdown"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/observation_frequency"
+            android:id="@+id/observationFrequencyLabel"
+            android:textSize="25sp" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/observationFrequency"
+            android:spinnerMode="dropdown"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

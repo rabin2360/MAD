@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/observationScreenLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.rabin.testapplication.ObservationScreen"
+    android:weightSum="1">
+
+
+    <Button
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:text="@string/start"
+        android:id="@+id/startButton"
+        android:layout_gravity="bottom"
+        android:background="@drawable/round_button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:onClick="startButtonPressed" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="@string/observation_screen"
+        android:id="@+id/textView"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="#0f0404"
+        android:background="#afaaaa" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/timerDisplay"
+        android:id="@+id/timeDisplay"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:textSize="40sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stopButtonText"
+        android:id="@+id/stopButton"
+        android:layout_alignTop="@+id/timeDisplay"
+        android:layout_toRightOf="@+id/timeDisplay"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textSize="20sp"
+        android:background="#FF4033"
+        android:onClick="stopButtonPressed"
+        android:height="25dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/observationButtonLabel"
+        android:id="@+id/observationSettingsButton"
+        android:textSize="20sp"
+        android:onClick="ObservationInfo"
+        android:layout_alignTop="@+id/timeDisplay"
+        android:layout_toLeftOf="@+id/timeDisplay"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:height="25dp"
+        android:background="#766e6e" />
+
+    <ToggleButton
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="@string/observing"
+        android:id="@+id/stdObsButton"
+        android:layout_below="@+id/observationSettingsButton"
+        android:layout_toLeftOf="@+id/timeDisplay"
+        android:layout_toStartOf="@+id/timeDisplay"
+        android:layout_marginTop="120dp"
+        android:textOff="@string/observing"
+        android:textOn="@string/observing"
+        android:background="@drawable/green_toggle_btn"
+        />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/participating"
+        android:id="@+id/stdParticipatingButton"
+        android:layout_below="@+id/stdObsButton"
+        android:layout_alignRight="@+id/stdObsButton"
+        android:layout_alignEnd="@+id/stdObsButton"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@+id/stdObsButton"
+        android:layout_alignStart="@+id/stdObsButton"
+        android:textOff="@string/participating"
+        android:textOn="@string/participating"
+        android:background="@drawable/green_toggle_btn"
+        />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/disengaged"
+        android:id="@+id/stdDisEngagedButton"
+        android:layout_below="@+id/stdParticipatingButton"
+        android:layout_alignLeft="@+id/stdParticipatingButton"
+        android:layout_alignStart="@+id/stdParticipatingButton"
+        android:layout_marginTop="20dp"
+        android:layout_alignRight="@+id/observationSettingsButton"
+        android:layout_alignEnd="@+id/observationSettingsButton"
+        android:textOff="@string/disengaged"
+        android:textOn="@string/disengaged"
+        android:background="@drawable/orange_toggle_btn"/>
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/verbal"
+        android:id="@+id/stdVerbal"
+        android:layout_below="@+id/stdDisEngagedButton"
+        android:layout_alignLeft="@+id/stdDisEngagedButton"
+        android:layout_alignStart="@+id/stdDisEngagedButton"
+        android:layout_marginTop="20dp"
+        android:layout_alignRight="@+id/stdDisEngagedButton"
+        android:layout_alignEnd="@+id/stdDisEngagedButton"
+        android:textOff="@string/verbal"
+        android:textOn="@string/verbal"
+        android:background="@drawable/orange_toggle_btn"/>
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/motor"
+        android:id="@+id/stdMotor"
+        android:layout_below="@+id/stdVerbal"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@+id/stdVerbal"
+        android:layout_alignStart="@+id/stdVerbal"
+        android:layout_alignRight="@+id/stdVerbal"
+        android:layout_alignEnd="@+id/stdVerbal"
+        android:textOff="@string/motor"
+        android:textOn="@string/motor"
+        android:background="@drawable/orange_toggle_btn"
+         />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/aggressive"
+        android:id="@+id/stdAggressive"
+        android:layout_below="@+id/stdMotor"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@+id/stdMotor"
+        android:layout_alignStart="@+id/stdMotor"
+        android:layout_alignRight="@+id/stdMotor"
+        android:layout_alignEnd="@+id/stdMotor"
+        android:textOff="@string/aggressive"
+        android:textOn="@string/aggressive"
+        android:background="@drawable/red_toggle_btn"
+         />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/out_of_seat"
+        android:id="@+id/stdOutOfSeat"
+        android:layout_below="@+id/stdAggressive"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@+id/stdAggressive"
+        android:layout_alignStart="@+id/stdAggressive"
+        android:layout_alignRight="@+id/stdAggressive"
+        android:layout_alignEnd="@+id/stdAggressive"
+        android:textOff="@string/out_of_seat"
+        android:textOn="@string/out_of_seat"
+        android:background="@drawable/red_toggle_btn"
+        />
+
+    <!--Peer buttons-->
+    <ToggleButton
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="@string/observing"
+        android:id="@+id/prObsButton"
+        android:layout_alignTop="@+id/stdObsButton"
+        android:layout_alignLeft="@+id/stopButton"
+        android:layout_alignStart="@+id/stopButton"
+        android:textOff="@string/observing"
+        android:textOn="@string/observing"
+        android:background="@drawable/green_toggle_btn"
+        />
+
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/participating"
+        android:id="@+id/prParticipatingButton"
+        android:layout_below="@+id/prObsButton"
+        android:layout_alignRight="@+id/prObsButton"
+        android:layout_alignEnd="@+id/prObsButton"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@+id/prObsButton"
+        android:layout_alignStart="@+id/prObsButton"
+        android:textOff="@string/participating"
+        android:textOn="@string/participating"
+        android:background="@drawable/green_toggle_btn"
+        />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/disengaged"
+        android:id="@+id/prDisEngagedButton"
+        android:layout_below="@+id/prParticipatingButton"
+        android:layout_alignLeft="@+id/prParticipatingButton"
+        android:layout_alignStart="@+id/prParticipatingButton"
+        android:layout_marginTop="20dp"
+        android:layout_alignRight="@+id/prParticipatingButton"
+        android:layout_alignEnd="@+id/prParticipatingButton"
+        android:textOff="@string/disengaged"
+        android:textOn="@string/disengaged"
+        android:background="@drawable/orange_toggle_btn"
+        />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/verbal"
+        android:id="@+id/prVerbal"
+        android:layout_below="@+id/prDisEngagedButton"
+        android:layout_alignLeft="@+id/prDisEngagedButton"
+        android:layout_alignStart="@+id/prDisEngagedButton"
+        android:layout_marginTop="20dp"
+        android:layout_alignRight="@+id/prDisEngagedButton"
+        android:layout_alignEnd="@+id/prDisEngagedButton"
+        android:textOff="@string/verbal"
+        android:textOn="@string/verbal"
+        android:background="@drawable/orange_toggle_btn"
+        />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/motor"
+        android:id="@+id/prMotor"
+        android:layout_below="@+id/prVerbal"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@+id/prVerbal"
+        android:layout_alignStart="@+id/prVerbal"
+        android:layout_alignRight="@+id/prVerbal"
+        android:layout_alignEnd="@+id/prVerbal"
+        android:textOff="@string/motor"
+        android:textOn="@string/motor"
+        android:background="@drawable/orange_toggle_btn"
+        />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/aggressive"
+        android:id="@+id/prAggressive"
+        android:layout_below="@+id/prMotor"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@+id/prMotor"
+        android:layout_alignStart="@+id/prMotor"
+        android:layout_alignRight="@+id/prMotor"
+        android:layout_alignEnd="@+id/prMotor"
+        android:textOff="@string/aggressive"
+        android:textOn="@string/aggressive"
+        android:background="@drawable/red_toggle_btn"
+        />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/out_of_seat"
+        android:id="@+id/prOutOfSeat"
+        android:layout_below="@+id/prAggressive"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@+id/prAggressive"
+        android:layout_alignStart="@+id/prAggressive"
+        android:layout_alignRight="@+id/prAggressive"
+        android:layout_alignEnd="@+id/prAggressive"
+        android:textOff="@string/out_of_seat"
+        android:textOn="@string/out_of_seat"
+        android:background="@drawable/red_toggle_btn"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stage: "
+        android:id="@+id/stageLabel"
+        android:textSize="25sp"
+        android:layout_below="@+id/observationSettingsButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
