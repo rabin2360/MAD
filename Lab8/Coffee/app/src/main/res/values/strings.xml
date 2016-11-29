@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Lab 8</string>
+    <string name="title">Coffee Shop Finder</string>
+    <string name="choose_your_crowd">Choose your crowd:</string>
+    <string name="buttonName">Submit</string>
+    <string-array name="crowdTypeVals">
+        <item>Hipster</item>
+        <item>Normal People</item>
+    </string-array>
+
+    <string name="suggestedCoffee">This is your suggested coffee shop:</string>
+</resources>
