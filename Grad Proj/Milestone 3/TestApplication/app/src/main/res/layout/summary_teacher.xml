@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:id="@+id/summaryTeacherEditBtn"
+        android:onClick="teacherSummaryEditButton"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/summaryTeacherEditBtn"
+        >
+
+
+        <EditText
+            android:id="@+id/popUpTeachFirstname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Firstname (Required)"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:gravity="center"
+            />
+
+        <EditText
+            android:id="@+id/popUpTeachLastname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Lastname (Required)"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:gravity="center"
+            />
+
+        <EditText
+            android:id="@+id/popUpTeachCurrentClass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Class"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

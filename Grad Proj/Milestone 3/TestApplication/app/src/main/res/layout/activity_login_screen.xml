@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:isScrollContainer="false">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    tools:context="com.example.rabin.testapplication.LoginScreen"
+    android:id="@+id/rootLayout"
+    android:background="@color/loginBackGround"
+    >
+
+    <!--labels-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/student_information_form"
+        android:id="@+id/PageTitle"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_marginTop="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/editInfo"
+        android:layout_alignEnd="@+id/editInfo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/lightBlue"
+        android:textSize="35sp"/>
+
+    <!--text entry-->
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/studentId"
+        android:width="300dp"
+        android:hint="@string/student_id_required"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:layout_below="@+id/PageTitle"
+        android:layout_centerHorizontal="true"
+        android:nextFocusDown="@+id/studentFirstName"/>
+
+
+
+    <EditText
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/studentFirstName"
+        android:inputType="text"
+        android:hint="@string/firstname_required"
+        android:gravity="center"
+        android:layout_alignTop="@+id/studentLastName"
+        android:nextFocusDown="@+id/studentLastName"
+        android:layout_below="@+id/studentId"
+        android:layout_marginLeft="100dp"
+        android:layout_marginStart="80dp"/>
+
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/studentLastName"
+        android:inputType="text"
+        android:hint="@string/lastname_required"
+        android:gravity="center"
+        android:layout_below="@+id/studentId"
+        android:layout_toRightOf="@+id/studentFirstName"
+        android:layout_toEndOf="@+id/studentFirstName"
+        android:layout_marginLeft="100dp"
+        android:layout_marginStart="100dp"
+        android:nextFocusDown="@+id/studentDOB"/>
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:id="@+id/studentDOB"
+        android:hint="@string/yyyy_mm_dd_required"
+        android:selectAllOnFocus="false"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        android:layout_below="@+id/studentFirstName"
+        android:layout_alignLeft="@+id/studentId"
+        android:layout_alignStart="@+id/studentId"
+        android:layout_alignRight="@+id/studentId"
+        android:layout_alignEnd="@+id/studentId"
+        android:gravity="center"
+        android:nextFocusDown="@+id/studentPrimaryLang"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:id="@+id/studentPrimaryLang"
+        android:hint="@string/student_apos_s_primary_language"
+        android:layout_below="@+id/studentDOB"
+        android:layout_alignLeft="@+id/studentId"
+        android:layout_alignStart="@+id/studentId"
+        android:layout_alignEnd="@+id/studentId"
+        android:layout_alignRight="@+id/studentId"
+        android:gravity="center"
+        android:nextFocusDown="@+id/studentConsentDate"/>
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/studentConsentDate"
+        android:hint="@string/consent_date_required"
+        android:inputType="number"
+        android:onClick="setDate"
+        android:selectAllOnFocus="false"
+        android:clickable="true"
+        android:focusableInTouchMode="false"
+        android:gravity="center"
+        android:layout_below="@+id/studentPrimaryLang"
+        android:layout_alignLeft="@+id/studentId"
+        android:layout_alignStart="@+id/studentId"
+        android:layout_alignEnd="@+id/studentId"
+        android:layout_alignRight="@+id/studentId"
+        android:nextFocusDown="@+id/studentLangProficiency"/>
+
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/n_a"
+        android:id="@+id/consentNA"
+        android:layout_toRightOf="@+id/studentConsentDate"
+        android:layout_marginLeft="10dp"
+        android:layout_alignBottom="@+id/studentConsentDate"
+        android:layout_alignTop="@+id/studentConsentDate"
+        android:checked="false"
+        android:onClick="consentCheckBoxListener"
+        android:textSize="20sp"
+        />
+
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/studentLangProficiency"
+        android:inputType = "text"
+        android:spinnerMode="dropdown"
+        android:textSize = "45sp"
+        android:layout_below="@+id/studentConsentDate"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@+id/studentId"
+        android:layout_alignStart="@+id/studentId"
+        android:layout_alignRight="@+id/studentId"
+        android:layout_alignEnd="@+id/studentId"
+        android:nextFocusDown="@+id/studentEthnicity"/>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/studentEthnicity"
+        android:inputType="text"
+        android:textSize = "45sp"
+        android:spinnerMode="dropdown"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/studentLangProficiency"
+        android:layout_alignLeft="@+id/studentId"
+        android:layout_alignStart="@+id/studentId"
+        android:layout_alignRight="@+id/studentId"
+        android:layout_alignEnd="@+id/studentId" />
+
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/studentGrade"
+        android:layout_below="@+id/studentEthnicity"
+        android:layout_alignLeft="@+id/studentId"
+        android:layout_alignStart="@+id/studentId"
+        android:layout_alignEnd="@+id/studentId"
+        android:layout_alignRight="@+id/studentId"
+        android:layout_marginTop="30dp"
+        android:inputType = "text"
+        android:spinnerMode="dropdown"
+        android:textSize = "45sp"/>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/primaryDisabilityCat"
+        android:layout_below="@+id/studentGrade"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@+id/iepChecked"
+        android:layout_alignRight="@+id/studentId"
+        android:layout_alignEnd="@+id/studentId"
+        android:inputType = "text"
+        android:spinnerMode="dropdown"
+        android:textSize = "45sp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/iep"
+        android:id="@+id/iepChecked"
+        android:layout_alignLeft="@+id/studentId"
+        android:layout_alignStart="@+id/studentId"
+        android:layout_below="@+id/studentGrade"
+        android:checked="false"
+        android:textSize="15sp"
+        android:layout_alignBottom="@+id/primaryDisabilityCat"
+        android:layout_alignTop="@+id/primaryDisabilityCat"
+        android:onClick="iepCheckedListener" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_504_plan"
+        android:id="@+id/plan504Checkbox"
+        android:checked="false"
+        android:textSize="15sp"
+
+        android:layout_alignLeft="@+id/studentId"
+        android:layout_alignStart="@+id/studentId"
+        android:layout_alignBottom="@+id/plan504"
+        android:layout_alignTop="@+id/plan504"
+        android:onClick="plan504CheckedListener" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:id="@+id/plan504"
+        android:hint="@string/icd_code"
+        android:gravity="center"
+        android:layout_below="@+id/iepChecked"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@+id/plan504Checkbox"
+        android:layout_toEndOf="@+id/plan504Checkbox"
+        android:layout_alignRight="@+id/studentId"
+        android:layout_alignEnd="@+id/studentId" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/InfoPageButtons"
+        android:orientation="horizontal"
+        android:layout_below="@+id/plan504"
+        android:layout_marginTop="30dp"
+        >
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ok"
+            android:id="@+id/Ok_button"
+            android:onClick="saveInformation"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/lightRed"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_clear"
+            android:id="@+id/clear_Button"
+            android:onClick="clearAllInfo"
+            android:layout_weight="1"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/lightRed"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_cancel"
+            android:id="@+id/cancel_Button"
+            android:onClick="exitStudentInfoScreen"
+            android:layout_weight="1"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/lightRed"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_observation"
+            android:id="@+id/startObservation"
+            android:layout_weight="1"
+            android:onClick="navigateToObservation"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/lightRed"/>
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/find"
+        android:id="@+id/find_StudentId"
+        android:layout_toRightOf="@+id/studentId"
+        android:layout_toEndOf="@+id/studentId"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:onClick="retrieveStudentInfo"
+        android:layout_alignTop="@+id/studentId"
+        android:layout_alignBottom="@+id/studentId"
+        android:background="@color/lightRed"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit"
+        android:id="@+id/editInfo"
+        android:layout_alignBottom="@+id/studentId"
+        android:layout_alignTop="@+id/find_StudentId"
+        android:layout_toRightOf="@+id/find_StudentId"
+        android:layout_toEndOf="@+id/find_StudentId"
+        android:layout_marginLeft="10dp"
+        android:visibility="invisible"
+        android:onClick="editButtonPressed"
+        android:background="@color/lightRed"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/previous_observation_s"
+        android:id="@+id/previousObservation"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_below="@+id/InfoPageButtons"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/observationList"
+        android:layout_marginTop="10dp"
+        android:choiceMode="singleChoice"
+        android:clickable="true"
+        android:layout_below="@+id/previousObservation"
+        />
+
+
+</RelativeLayout>
+</ScrollView>

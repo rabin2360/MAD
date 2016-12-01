@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.rabin.testapplication.SummaryScreen"
+    android:background="@color/loginBackGround">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/summary_screen"
+        android:id="@+id/summaryScreenTitle"
+        android:textSize="35sp"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text ="@string/student_summary_information"
+        android:id="@+id/summaryStdLabel"
+        android:textSize="25sp"
+        android:layout_below="@+id/summaryScreenTitle"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:onClick="studentSummaryClick"
+        android:clickable="true"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/studentSummaryDisp"
+        android:layout_below="@+id/summaryStdLabel"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
+
+        <TextView
+            android:id="@+id/summaryStdId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/student_id"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:gravity="center"
+            />
+        
+        <TextView
+            android:id="@+id/summaryStdFirstname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/firstname"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/summaryStdLastname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lastname"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:gravity="center"
+            />
+        
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text ="@string/teacherSummary"
+        android:id="@+id/teacherSummaryLabel"
+        android:textSize="25sp"
+        android:layout_below="@+id/studentSummaryDisp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:clickable="true"
+        android:onClick="teacherSummaryClick"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/teacherSummaryDisp"
+        android:layout_below="@+id/teacherSummaryLabel"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/summaryTeachFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/firstname"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/summaryTeachLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lastname"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/summaryCurrentClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/classname"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text ="@string/observerSummary"
+        android:id="@+id/observerSummaryLabel"
+        android:textSize="25sp"
+        android:layout_below="@+id/teacherSummaryDisp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:clickable="true"
+        android:onClick="observerSummaryClick"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/observerSummaryDisp"
+        android:layout_below="@+id/observerSummaryLabel"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/summaryObsFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/firstname"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/summaryObsLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lastname"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/summaryObsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text ="@string/observationSummary"
+        android:id="@+id/observationSummaryLabel"
+        android:textSize="25sp"
+        android:layout_below="@+id/observerSummaryDisp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:clickable="true"
+        android:onClick="observationSummaryClick"
+        />
+
+    <TableLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/observationTable"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/observationSummaryLabel">
+
+
+    <TableRow
+        android:id="@+id/tableHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:textSize="20sp"
+            android:background="@drawable/cellborder"
+            android:text="@string/categories"
+            android:padding="3dip"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_column="1"
+            android:text="@string/observed_student"
+            android:padding="3dip"
+            android:background="@drawable/cellborder"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_column="2"
+            android:text="@string/peer"
+            android:padding="3dip"
+            android:background="@drawable/cellborder"
+            android:gravity="center"
+            />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/observingRow"
+        android:layout_below="@+id/tableHeader"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/stdObsTableLabel"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:textSize="20sp"
+            android:background="@drawable/cellborder"
+            android:text="@string/observing"
+            android:padding="3dip"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/stdObsData"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_column="1"
+            android:text="@string/zero_percent"
+            android:padding="3dip"
+            android:background="@drawable/cellborder"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/prObsData"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_column="2"
+            android:text="@string/zero_percent"
+            android:padding="3dip"
+            android:background="@drawable/cellborder"
+            android:gravity="center"
+            />
+
+    </TableRow>
+
+
+    <TableRow
+        android:id="@+id/participatingRow"
+        android:layout_below="@+id/observingRow"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/stdPartTableLabel"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:textSize="20sp"
+            android:background="@drawable/cellborder"
+            android:text="@string/particpating"
+            android:padding="3dip"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/stdPartData"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_column="1"
+            android:text="@string/zero_percent"
+            android:padding="3dip"
+            android:background="@drawable/cellborder"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/prPartData"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_column="2"
+            android:text="@string/zero_percent"
+            android:padding="3dip"
+            android:background="@drawable/cellborder"
+            android:gravity="center"
+            />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/disengagedRow"
+        android:layout_below="@+id/participatingRow"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/stdDisEngTableLabel"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:textSize="20sp"
+            android:background="@drawable/cellborder"
+            android:text="@string/disengaged"
+            android:padding="3dip"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/stdDisEngData"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_column="1"
+            android:text="@string/zero_percent"
+            android:padding="3dip"
+            android:background="@drawable/cellborder"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/prDisEngData"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_column="2"
+            android:text="@string/zero_percent"
+            android:padding="3dip"
+            android:background="@drawable/cellborder"
+            android:gravity="center"
+            />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/verbalRow"
+        android:layout_below="@+id/disengagedRow"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/stdVerbalTableLabel"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:textSize="20sp"
+            android:background="@drawable/cellborder"
+            android:text="@string/verbal"
+            android:padding="3dip"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/stdVerbalData"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_column="1"
+            android:text="@string/zero_percent"
+            android:padding="3dip"
+            android:background="@drawable/cellborder"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/prVerbalData"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_column="2"
+            android:text="@string/zero_percent"
+            android:padding="3dip"
+            android:background="@drawable/cellborder"
+            android:gravity="center"
+            />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/motorRow"
+        android:layout_below="@+id/verbalRow"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/stdMotorTableLabel"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:textSize="20sp"
+            android:background="@drawable/cellborder"
+            android:text="@string/motor"
+            android:padding="3dip"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/stdMotorData"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_column="1"
+            android:text="@string/zero_percent"
+            android:padding="3dip"
+            android:background="@drawable/cellborder"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/prMotorData"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_column="2"
+            android:text="@string/zero_percent"
+            android:padding="3dip"
+            android:background="@drawable/cellborder"
+            android:gravity="center"
+            />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/aggressiveRow"
+        android:layout_below="@+id/motorRow"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/stdAggressiveTableLabel"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:textSize="20sp"
+            android:background="@drawable/cellborder"
+            android:text="@string/aggressive"
+            android:padding="3dip"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/stdAggressiveData"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_column="1"
+            android:text="@string/zero_percent"
+            android:padding="3dip"
+            android:background="@drawable/cellborder"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/prAggressiveData"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_column="2"
+            android:text="@string/zero_percent"
+            android:padding="3dip"
+            android:background="@drawable/cellborder"
+            android:gravity="center"
+            />
+
+    </TableRow>
+
+        <TableRow
+            android:id="@+id/outOfSeat"
+            android:layout_below="@+id/aggressiveRow"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/stdOutOfSeatTableLabel"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:textSize="20sp"
+                android:background="@drawable/cellborder"
+                android:text="@string/out_of_seat"
+                android:padding="3dip"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/stdOutOfSeatData"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_column="1"
+                android:text="@string/zero_percent"
+                android:padding="3dip"
+                android:background="@drawable/cellborder"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/prOutOfSeatData"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_column="2"
+                android:text="@string/zero_percent"
+                android:padding="3dip"
+                android:background="@drawable/cellborder"
+                android:gravity="center"
+                />
+    </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Optional Questions?"
+        android:id="@+id/optionQuestionsBtn"
+        android:layout_below="@+id/observationTable"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/summaryButtons"
+        android:layout_below="@+id/optionQuestionsBtn"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Discard"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:layout_weight="1"
+            android:onClick="saveToDatabase"/>
+
+
+    </LinearLayout>
+</RelativeLayout>
