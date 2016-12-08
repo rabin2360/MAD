@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">FinalExam</string>
+    <string name="pageTitle">I Scream for Ice Cream</string>
+    <string name="teat_me">Treat Me</string>
+    <string-array name="iceCreamTypes">
+        <item>Salted Caramel</item>
+        <item>Death by Chocolate</item>
+        <item>Cookies and Cream</item>
+    </string-array>
+    <string name ="findTreat">Find Treat</string>
+</resources>
