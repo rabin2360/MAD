@@ -30,7 +30,7 @@
 
     <Spinner
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:id="@+id/iceCreamTypes"
         android:layout_below="@+id/userEntry"
         android:layout_marginTop="10dp"
@@ -83,13 +83,26 @@
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dairy-free"
+        android:text="@string/dairy_free"
         android:id="@+id/dairyFree"
         android:layout_below="@+id/title"
         android:layout_toRightOf="@+id/userEntry"
         android:layout_alignRight="@+id/title"
         android:layout_alignEnd="@+id/title"
         android:layout_above="@+id/iceCreamTypes" />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cupCone"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/iceCreamTypes"
+        android:layout_toEndOf="@+id/iceCreamTypes"
+        android:layout_alignTop="@+id/iceCreamTypes"
+        android:layout_alignBottom="@+id/iceCreamTypes"
+        android:textOn="@string/cup"
+        android:textOff="@string/cone"/>
 
 
 </RelativeLayout>

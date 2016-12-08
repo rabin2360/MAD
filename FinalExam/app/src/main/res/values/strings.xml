@@ -8,4 +8,7 @@
         <item>Cookies and Cream</item>
     </string-array>
     <string name ="findTreat">Find Treat</string>
+    <string name="cup">Cup</string>
+    <string name="cone">Cone</string>
+    <string name="dairy_free">Dairy-free</string>
 </resources>

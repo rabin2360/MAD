@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Spinner iceCreamTypes;
     private IceCreamShops shops;
     private Switch dairyFree;
+    private ToggleButton cupCone;
 
 
     @Override
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         treatMeButton = (Button) findViewById(R.id.treatMeButton);
         iceCreamTypes = (Spinner) findViewById(R.id.iceCreamTypes);
         dairyFree = (Switch) findViewById(R.id.dairyFree);
-
+        cupCone = (ToggleButton) findViewById(R.id.cupCone);
         shops = new IceCreamShops();
     }
 
@@ -54,7 +56,17 @@ public class MainActivity extends AppCompatActivity {
         str.append(userInputText);
         str.append("is a ");
         str.append(iceCreamSelected);
-        str.append(" ice cream. You should visit ");
+        str.append(" ice cream ");
+
+        if(cupCone.isChecked())
+        {
+            str.append("cup. ");
+        }
+        else
+        {
+            str.append("cone. ");
+        }
+        str.append("You should visit ");
         str.append(iceCreamShopName);
         str.append(".");
 
