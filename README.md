@@ -12,4 +12,4 @@ Table of Contents for MAD Assignment(s):
 * Project 2 (contains milestone 1, milestone 2, milestone 3)
 * Lab 7
 * Lab 8
-* Project 3 (contains milestone 1)
+* Project 3 (contains milestone 1, milestone 3)
